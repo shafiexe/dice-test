@@ -2,25 +2,66 @@
   "name": "dice",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:unit": "npx vitest",
+    "test:e2e": "npx playwright test",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit",
+    "format": "prettier --write ."
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.21.1",
+    "@ant-design/nextjs-registry": "^1.0.1",
+    "@auth0/nextjs-auth0": "^3.5.0",
+    "@next/bundle-analyzer": "^14.2.13",
+    "@prisma/client": "^5.19.1",
+    "@prisma/extension-optimize": "^1.0.1",
+    "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.13"
+    "stripe": "^16.12.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@playwright/test": "^1.47.2",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
+    "@types/jest": "^29.5.13",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "^22.5.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.13"
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/ui": "^2.1.1",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.7",
+    "eslint": "^9.11.0",
+    "eslint-config-next": "14.2.13",
+    "git-format-staged": "^3.1.1",
+    "husky": "^9.1.6",
+    "jsdom": "^25.0.0",
+    "jwt-decode": "^4.0.0",
+    "lint-staged": "^15.2.10",
+    "micro": "^10.0.1",
+    "moment": "^2.30.1",
+    "postcss": "^8.4.47",
+    "prettier": "3.3.3",
+    "prisma": "^5.19.1",
+    "sass": "^1.79.3",
+    "tailwindcss": "^3.4.12",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,md,json,scss}": [
+      "prettier --write"
+    ]
   }
 }

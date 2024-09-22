@@ -1,0 +1,2 @@
+npx lint-staged
+ANALYZE=true npm run build
