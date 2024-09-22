@@ -12,7 +12,8 @@
     "test:e2e": "npx playwright test",
     "prepare": "husky",
     "commitlint": "commitlint --edit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.21.1",
