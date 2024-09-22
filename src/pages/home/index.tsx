@@ -2,6 +2,7 @@
 
 import React from "react";
 import * as Paths from "@router/paths";
+import { analytics } from "@lib/segment";
 
 interface User {
   id: number;
@@ -41,6 +42,7 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (username && email) {
+      analytics.track(username);
       await fetch("/api/users", {
         method: "POST",
         headers: {
